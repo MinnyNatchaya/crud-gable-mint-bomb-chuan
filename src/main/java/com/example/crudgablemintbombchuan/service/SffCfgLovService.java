@@ -21,8 +21,8 @@ public class SffCfgLovService {
         return sffCfgLovRepo.findAll();
     }
 
-    public ResponseEntity<SffCfgLov> findById(String ROW_ID){
-        SffCfgLov sffCfgLov=sffCfgLovRepo.findById(ROW_ID).orElseThrow(()->new ResourceNotFoundException("SffCfgLov not exist with ROW_ID : " + ROW_ID));
+    public ResponseEntity<SffCfgLov> findById(String rowId){
+        SffCfgLov sffCfgLov=sffCfgLovRepo.findById(rowId).orElseThrow(()->new ResourceNotFoundException("SffCfgLov not exist with ROW_ID : " + rowId));
         return ResponseEntity.ok(sffCfgLov);
     }
 
@@ -30,18 +30,18 @@ public class SffCfgLovService {
         return sffCfgLovRepo.save(sffCfgLov);
     }
 
-    public ResponseEntity<SffCfgLov> update(String ROW_ID,SffCfgLov sffCfgLovDetail){
-        SffCfgLov sffCfgLov=sffCfgLovRepo.findById(ROW_ID).map(x->{
+    public ResponseEntity<SffCfgLov> update(String rowId,SffCfgLov sffCfgLovDetail){
+        SffCfgLov sffCfgLov=sffCfgLovRepo.findById(rowId).map(x->{
             x.copy(sffCfgLovDetail);
             return sffCfgLovRepo.save(x);
         }).orElseGet(()->{
-            throw new ResourceNotFoundException("SffCfgLov not exist with ROW_ID : " + ROW_ID);
+            throw new ResourceNotFoundException("SffCfgLov not exist with ROW_ID : " + rowId);
         });
         return ResponseEntity.ok(sffCfgLov);
     }
 
-    public ResponseEntity<Map<String,Boolean>> delete(String ROW_ID){
-        SffCfgLov sffCfgLov=sffCfgLovRepo.findById(ROW_ID).orElseThrow(()->new ResourceNotFoundException("SffCfgLov not exist with ROW_ID : " + ROW_ID));
+    public ResponseEntity<Map<String,Boolean>> delete(String rowId){
+        SffCfgLov sffCfgLov=sffCfgLovRepo.findById(rowId).orElseThrow(()->new ResourceNotFoundException("SffCfgLov not exist with ROW_ID : " + rowId));
         sffCfgLovRepo.delete(sffCfgLov);
         Map<String,Boolean> response = new HashMap<>();
         response.put("delete",Boolean.TRUE);

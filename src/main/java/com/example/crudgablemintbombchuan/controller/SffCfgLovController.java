@@ -22,9 +22,9 @@ public class SffCfgLovController {
         return sffCfgLovService.findAll();
     }
 
-    @GetMapping("/{ROW_ID}")
-    public ResponseEntity<SffCfgLov> findById(@PathVariable String ROW_ID){
-        return sffCfgLovService.findById(ROW_ID);
+    @GetMapping("/{rowId}")
+    public ResponseEntity<SffCfgLov> findById(@PathVariable String rowId){
+        return sffCfgLovService.findById(rowId);
     }
 
     @PostMapping("")
@@ -32,14 +32,14 @@ public class SffCfgLovController {
         return sffCfgLovService.create(sffCfgLov);
     }
 
-    @PutMapping("/{ROW_ID}")
-    public ResponseEntity<SffCfgLov> update(@PathVariable String ROW_ID,@RequestBody SffCfgLov sffCfgLov){
-        return sffCfgLovService.update(ROW_ID,sffCfgLov);
+    @PutMapping("/{rowId}")
+    public ResponseEntity<SffCfgLov> update(@PathVariable String rowId,@RequestBody SffCfgLov sffCfgLov){
+        return sffCfgLovService.update(rowId,sffCfgLov);
     }
 
-    @DeleteMapping("/{ROW_ID}")
-    public ResponseEntity<Map<String,Boolean>> delete(@PathVariable String ROW_ID){
-        return sffCfgLovService.delete(ROW_ID);
+    @DeleteMapping("/{rowId}")
+    public ResponseEntity<Map<String,Boolean>> delete(@PathVariable String rowId){
+        return sffCfgLovService.delete(rowId);
     }
 
 

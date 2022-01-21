@@ -23,78 +23,110 @@ public class SffCfgLov {
 
         @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(nullable = false,name="ROW_ID")
+        private String rowId;
+
+        @Column(name="PAR_ROW_ID",insertable = false,updatable = false)
+        private String parRowId;
+
+        @Column(nullable = false,name="LOV_TYPE")
+        private String lovType;
+
+        @Column(nullable = false,name="LOV_NAME")
+        private String lovName;
+
+        @Column(nullable = false,name="DISPLAY_VAL")
+        private String displayVal;
+
+        @Column(nullable = false,name="ACTIVE_FLG")
+        private String activeFlg;
+
+        @Column(name="TEXT_DESC")
+        private String textDesc;
+
+        @Column(name="ORDER_BY")
+        private BigInteger orderBy;
+
+        @Column(nullable = false,name="MODIFICATION_NUM")
+        private BigInteger modificationNum;
 
 
-        @NotNull
-        private String ROW_ID;
-
-        private String PAR_ROW_ID;
-
-        @NotNull
-        private String LOV_TYPE;
-        @NotNull
-        private String LOV_NAME;
-        @NotNull
-        private String DISPLAY_VAL;
-
-        @NotNull
-        private String ACTIVE_FLG;
-        private String TEXT_DESC;
-        private BigInteger ORDER_BY;
-
-        @NotNull
-        private BigInteger MODIFICATION_NUM;
-
-        @NotNull
         @CreationTimestamp
-        private Date CREATED;
-        @NotNull
-        private String CREATED_BY;
+        @Column(nullable = false,name="CREATED")
+        private Date create;
 
-        @NotNull
+        @Column(nullable = false,name="CREATED_BY")
+        private String createBy;
+
+
         @UpdateTimestamp
-        private Date LAST_UPD;
-        @NotNull
-        private String LAST_UPD_BY;
+        @Column(nullable = false,name="LAST_UPD")
+        private Date lastUpd;
 
-        private String GROUP_TYPE;
-        private String LOV_VAL1;
-        private String LOV_VAL2;
-        private String LOV_VAL3;
-        private String LOV_VAL4;
-        private String LOV_VAL5;
-        private String LOV_VAL6;
-        private String LOV_VAL7;
-        private String LOV_VAL8;
-        private String LOV_VAL9;
-        private String LOV_VAL10;
+        @Column(nullable = false,name="LAST_UPD_BY")
+        private String lastUpdBy;
+
+        @Column(name="GROUP_TYPE")
+        private String groupType;
+
+        @Column(name="LOV_VAL1")
+        private String lovVal1;
+
+        @Column(name="LOV_VAL2")
+        private String lovVal2;
+
+        @Column(name="LOV_VAL3")
+        private String lovVal3;
+
+        @Column(name="LOV_VAL4")
+        private String lovVal4;
+
+        @Column(name="LOV_VAL5")
+        private String lovVal5;
+
+        @Column(name="LOV_VAL6")
+        private String lovVal6;
+
+        @Column(name="LOV_VAL7")
+        private String lovVal7;
+
+        @Column(name="LOV_VAL8")
+        private String lovVal8;
+
+        @Column(name="LOV_VAL9")
+        private String lovVal9;
+
+        @Column(name="PAR_ROW_ID")
+        private String lovVal10;
 
         public void copy(SffCfgLov s){
-                this.setROW_ID(s.getROW_ID());
-                this.setPAR_ROW_ID(s.getPAR_ROW_ID());
-                this.setLOV_TYPE(s.getLOV_TYPE());
-                this.setLOV_NAME(s.getLOV_NAME());
-                this.setDISPLAY_VAL(s.getDISPLAY_VAL());
-                this.setACTIVE_FLG(s.getACTIVE_FLG());
-                this.setTEXT_DESC(s.getTEXT_DESC());
-                this.setORDER_BY(s.getORDER_BY());
-                this.setMODIFICATION_NUM(s.getMODIFICATION_NUM());
-                this.setCREATED(s.getCREATED());
-                this.setCREATED_BY(s.getCREATED_BY());
-                this.setLAST_UPD(s.getLAST_UPD());
-                this.setLAST_UPD_BY(s.getLAST_UPD_BY());
-                this.setGROUP_TYPE(s.getGROUP_TYPE());
+                this.setRowId(s.getRowId());
+                this.setParRowId(s.getParRowId());
+                this.setLovType(s.getLovType());
+                this.setLovName(s.getLovName());
+                this.setDisplayVal(s.getDisplayVal());
+                this.setActiveFlg(s.getActiveFlg());
+                this.setTextDesc(s.getTextDesc());
+                this.setOrderBy(s.getOrderBy());
+                this.setModificationNum(s.getModificationNum());
+                this.setCreate(s.getCreate());
+                this.setCreateBy(s.getCreateBy());
+                this.setLastUpd(s.getLastUpd());
+                this.setLastUpdBy(s.getLastUpdBy());
+                this.setGroupType(s.getGroupType());
 
-                this.setLOV_VAL1(s.getLOV_VAL1());
-                this.setLOV_VAL2(s.getLOV_VAL2());
-                this.setLOV_VAL3(s.getLOV_VAL3());
-                this.setLOV_VAL4(s.getLOV_VAL4());
-                this.setLOV_VAL5(s.getLOV_VAL5());
-                this.setLOV_VAL6(s.getLOV_VAL6());
-                this.setLOV_VAL7(s.getLOV_VAL7());
-                this.setLOV_VAL8(s.getLOV_VAL8());
-                this.setLOV_VAL9(s.getLOV_VAL9());
-                this.setLOV_VAL10(s.getLOV_VAL10());
+                this.setLovVal1(s.getLovVal1());
+                this.setLovVal2(s.getLovVal2());
+                this.setLovVal3(s.getLovVal3());
+                this.setLovVal4(s.getLovVal4());
+                this.setLovVal5(s.getLovVal5());
+                this.setLovVal6(s.getLovVal6());
+                this.setLovVal7(s.getLovVal7());
+                this.setLovVal8(s.getLovVal8());
+                this.setLovVal9(s.getLovVal9());
+                this.setLovVal10(s.getLovVal10());
+
+
 
         }
 
