@@ -26,7 +26,7 @@ public class SffCfgLov {
         @Column(name="ROW_ID")
         private String rowId;
 
-        @Column(name="PAR_ROW_ID")
+        @Column(name="PAR_ROW_ID",insertable = false , updatable = false)
         private String parRowId;
 
         @Column(name="LOV_TYPE")
