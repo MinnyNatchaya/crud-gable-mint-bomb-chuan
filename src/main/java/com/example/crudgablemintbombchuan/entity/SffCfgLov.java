@@ -23,22 +23,22 @@ public class SffCfgLov {
 
         @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(nullable = false,name="ROW_ID")
+        @Column(name="ROW_ID")
         private String rowId;
 
-        @Column(name="PAR_ROW_ID",insertable = false,updatable = false)
+        @Column(name="PAR_ROW_ID")
         private String parRowId;
 
-        @Column(nullable = false,name="LOV_TYPE")
+        @Column(name="LOV_TYPE")
         private String lovType;
 
-        @Column(nullable = false,name="LOV_NAME")
+        @Column(name="LOV_NAME")
         private String lovName;
 
-        @Column(nullable = false,name="DISPLAY_VAL")
+        @Column(name="DISPLAY_VAL")
         private String displayVal;
 
-        @Column(nullable = false,name="ACTIVE_FLG")
+        @Column(name="ACTIVE_FLG")
         private String activeFlg;
 
         @Column(name="TEXT_DESC")
@@ -47,23 +47,23 @@ public class SffCfgLov {
         @Column(name="ORDER_BY")
         private BigInteger orderBy;
 
-        @Column(nullable = false,name="MODIFICATION_NUM")
+        @Column(name="MODIFICATION_NUM")
         private BigInteger modificationNum;
 
 
         @CreationTimestamp
-        @Column(nullable = false,name="CREATED")
+        @Column(name="CREATED")
         private Date create;
 
-        @Column(nullable = false,name="CREATED_BY")
+        @Column(name="CREATED_BY")
         private String createBy;
 
 
         @UpdateTimestamp
-        @Column(nullable = false,name="LAST_UPD")
+        @Column(name="LAST_UPD")
         private Date lastUpd;
 
-        @Column(nullable = false,name="LAST_UPD_BY")
+        @Column(name="LAST_UPD_BY")
         private String lastUpdBy;
 
         @Column(name="GROUP_TYPE")
